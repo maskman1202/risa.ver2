@@ -32,6 +32,15 @@ http
   .listen(3000);
 
 
+client.on("message", message => {
+  if (message.content == "/muteAll") {
+    let channel = message.member.voiceChannel;
+    for (let member of channel.members) {
+      member[1].setMute(true);
+    }
+  }
+});
+
 //おみくじ
 client.on('message', message =>{
   if (message.author.id == client.user.id || message.author.bot){
