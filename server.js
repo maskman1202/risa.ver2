@@ -1,7 +1,3 @@
-# risa.ver2
-risaの更新版
-
-
 const http = require("http");
 const querystring = require("querystring");
 const discord = require("discord.js");
