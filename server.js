@@ -31,7 +31,7 @@ http
   })
   .listen(3000);
 
-
+//ミュートだけできる
 client.on("message", message => {
   if (message.content == "/muteAll") {
     let channel = message.member.voiceChannel;
