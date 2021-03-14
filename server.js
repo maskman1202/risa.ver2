@@ -37,37 +37,33 @@ client.on("ready", message => {
   client.user.setPresence({ game: { name: "試験運用中" } });
 });
 
-//ミュートだけできる
-client.on("message", message => {
-  if (message.content == "/muteAll") {
-    let channel = message.member.voiceChannel;
-    for (let member of channel.members) {
-      member[1].setMute(true);
+//mute unmute
+client.on('message', (message) => {
+    const channel = message.channel
+    const members = channel.members
+    if (message.content.startsWith("/muteall")) {
+        members.forEach(member => {
+            member.voice.setMute(true)
+            member.voice.setDeaf(true)
+        });
+        message.channel.send('Server muted');
+    } else if (message.content.startsWith("/unmuteall")) {
+        members.forEach(member => {
+            member.voice.setMute(false)
+            member.voice.setDeaf(false)
+        });
+        message.channel.send('Server unmuted');
     }
-  }
 });
 
 
 
-
-//システム
-client.on("message", msg => {
-  if (msg.content === "start") {
-    msg.channel.send("START");
-  }
-});
-
-client.on("message", msg => {
-  if (msg.content === "reset") {
-    msg.channel.send("===========================RESTERT===========================");
-  }
-});
 
 //risaの紹介
 client.on("message", msg => {
   if (msg.content === "risaの紹介") {
     msg.channel.send(
-      "ただいま試験運用中です、誤作動や過激な発言、エラーなどよく起きると思いますがご了承ください"
+      "ただいま試験運用中です、誤作動やエラーなどよく起きると思いますがご了承ください"
     );
   }
 });
@@ -79,7 +75,7 @@ client.on("message", msg => {
   }
 });
 
-//サーバー
+//ゲームサーバー説明
 client.on("message", msg => {
   if (msg.content === "SB-1") {
     msg.channel.send("Asia");
@@ -124,19 +120,7 @@ client.on("message", msg => {
   }
 });
 
-//身内言葉
-client.on("message", msg => {
-  if (msg.content === "なかむ嫌い") {
-    msg.channel.send("それな");
-  }
-});
-
-client.on("message", msg => {
-  if (msg.content === "MASK神") {
-    msg.channel.send("MASKはとても優しい神です");
-  }
-});
-
+//なんとなく
 client.on("message", msg => {
   if (msg.content === "ミュートして") {
     msg.channel.send("は？自分でしろ！！人間やろ");
