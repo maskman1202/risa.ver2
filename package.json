@@ -1,31 +1,32 @@
 # risa.ver2
 risaの更新版
-{{
-  " // 1 "： "はアプリとその依存関係を説明します"、
-  " // 2 "： " https://docs.npmjs.com/files/package.json "、
-  " // 3 "： "このファイルを更新すると、パッケージがダウンロードおよび更新されます"、
-  "名前"： " hello-express "、
-  "バージョン"： " 0.0.1 "、
-  " description "： " Express上に構築されたシンプルなノードアプリで、すぐに起動して実行できます。"、
-  "メイン"： " server.js "、
-  "スクリプト"：{
-    "開始"： "ノードserver.js "
-  }、
-  "依存関係"：{
-    "エクスプレス"： " ^ 4.17.1 "、
-    " discord.js "： " ^ 11.6.4 "、
-    "クエリ文字列"： " ^ 0.2.0 "
-  }、
-  「エンジン」：{
-    "ノード"： " 12.x "
-  }、
-  "リポジトリ"：{
-    " url "： " https://glitch.com/edit/#!/hello-express "
-  }、
-  "ライセンス"： " MIT "、
-  "キーワード"：[
-    "ノード"、
-    「グリッチ」、
-    「エクスプレス」
+
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "discord.js": "^12.5.1",
+    "querystring": "^0.2.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
   ]
 }
